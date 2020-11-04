@@ -24,9 +24,9 @@ const Photo = ({ photo: { description,  urls: {regular}, user: {username, portfo
 
 
   <React.Fragment>
-    <div className="col-sm-6 col-md-4">
+    <div className="col-sm-6 col-md-4 thumbnail-wrapper">
       <div className="thumbnail">
-        <img src={regular} alt="Image" />
+        <img className="thumbnail-image" src={regular} alt="Image" />
         <div className="caption">
           <h3>{description}</h3>
           <p>User: {username}</p>
@@ -53,7 +53,7 @@ const App = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="jumbotron text-center">
+        <div className="jumbotron text-center jumbotron-wrapper">
           <h1>Photos</h1>
           <p><a className="btn btn-primary btn-lg" href="https://github.com/amitzed" target="_blank" role="button">Learn more</a></p>
         </div>
