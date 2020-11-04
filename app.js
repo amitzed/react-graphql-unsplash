@@ -16,7 +16,7 @@ const typeDefs = gql`
 
   type Photo {
     id: ID
-    title: String
+    description: String
     urls: URL
     user: User
   }
@@ -32,9 +32,9 @@ const resolvers = {
       try {
         const photos = await axios.get(`https://api.unsplash.com/photos/?client_id=${KEY}`)
 
-        return photos.data.map(({ id, title, urls, user }) => ({
+        return photos.data.map(({ id, description, urls, user }) => ({
           id,
-          title,
+          description,
           urls,
           user
         }))
