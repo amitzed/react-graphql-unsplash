@@ -30,7 +30,7 @@ const resolvers = {
   Query: {
     photos: async () => {
       try {
-        const photos = await axios.get(`https://api.unsplash.com/collections/?client_id=${KEY}`)
+        const photos = await axios.get(`https://api.unsplash.com/photos/?client_id=${KEY}`)
 
         return photos.data.map(({ id, title, urls, user }) => ({
           id,

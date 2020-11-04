@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
 
 import './index.css';
 
 import App from './components//App';
 import reportWebVitals from './reportWebVitals';
 
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql'
+})
+
 ReactDOM.render(
-  <app />,
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
   document.querySelector('#root')
 )
 
